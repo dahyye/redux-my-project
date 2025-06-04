@@ -12,6 +12,8 @@ import BoardUpdate from "./components/board/BoardUpdate";
 import YoutubeFind from "./components/youtube/YoutubeFind";
 import HotelList from "./components/hotel/HotelList";
 import HotelDetail from "./components/hotel/HotelDetail";
+import HotelFind from "./components/hotel/HotelFind";
+import NewsList from "./components/news/NewsList";
 
 function App() {
   return (
@@ -27,7 +29,9 @@ function App() {
                   <Route path={"/board/update/:no"} element={<BoardUpdate/>} />
                   <Route path={"/youtube/find"} element={<YoutubeFind/>} />
                   <Route path={"/hotel/list"} element={<HotelList/>} />
-                  <Route path={"/hotel/detail/:content_no"} element={<HotelDetail/>} />
+                  <Route path={"/hotel/detail/:content_id"} element={<HotelDetail/>} />
+                  <Route path={"/hotel/find"} element={<HotelFind/>} />
+                  <Route path={"/news/list"} element={<NewsList/>} />
               </Routes>
               <Footer />
           </Router>

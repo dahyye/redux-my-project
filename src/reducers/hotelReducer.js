@@ -1,7 +1,8 @@
-import {FETCH_HOTEL_LIST,FETCH_HOTEL_DETAIL} from "../actions/types";
+import {FETCH_HOTEL_LIST, FETCH_HOTEL_DETAIL, FETCH_HOTEL_FIND} from "../actions/types";
 const hotelState={
     hotel_list:{},
-    hotel_detail:{}
+    hotel_detail:{},
+    find_list:[]
 }
 
 export default function(state=hotelState, action){
@@ -15,6 +16,11 @@ export default function(state=hotelState, action){
             return {
                 ...state,
                 hotel_detail:action.payload
+            }
+        case FETCH_HOTEL_FIND:
+            return {
+                ...state,
+                find_list:action.payload
             }
         default:
             return state;

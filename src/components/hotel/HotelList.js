@@ -99,9 +99,9 @@ function HotelList(){
 
                                         <hr/>
 
-                                        <a href="blog-details.html"
+                                        <Link to={"/hotel/detail/"+hotel.content_id}
                                            className="readmore stretched-link"><span>Read More</span><i
-                                            className="bi bi-arrow-right"></i></a>
+                                            className="bi bi-arrow-right"></i></Link>
 
                                     </div>
 
@@ -110,15 +110,16 @@ function HotelList(){
                             )
                         }
                     </div>
+                    <div className="row" style={{"marginTop":"20px"}}></div>
                     <div className="col-12">
-                        <div className="pagination-area d-sm-flex mt-15">
+                        <div className="pagination-area d-sm-flex mt-15 justify-content-between align-items-center">
                             <nav aria-label="#">
-                                <ul className="pagination">
+                                <ul className="custom-pagination">
                                     {row}
                                 </ul>
                             </nav>
-                            <div className="page-status">
-                                <p>Page {hotelList.curpage} of {hotelList.totalpage} results</p>
+                            <div className="page-status ms-3">
+                                <p className="mb-0">Page {hotelList.curpage} of {hotelList.totalpage} results</p>
                             </div>
                         </div>
                     </div>

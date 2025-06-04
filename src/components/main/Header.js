@@ -18,7 +18,7 @@ function Header() {
                                 className="bi bi-chevron-down toggle-dropdown"></i></a>
                                 <ul>
                                     <li><Link to="/hotel/list">TOTAL LIST</Link></li>
-                                    <li><a href="category.html">FIND</a></li>
+                                    <li><a href="/hotel/find">FIND</a></li>
                                 </ul>
                             </li>
                             <li className="dropdown"><a href="#"><span>RESTAURANT</span> <i
@@ -28,8 +28,8 @@ function Header() {
                                     <li><a href="category.html">FIND</a></li>
                                 </ul>
                             </li>
-                            <li><a href="contact.html">YOUTUBE</a></li>
-                            <li><a href="contact.html">NEWS</a></li>
+                            <li><a href="/youtube/find">YOUTUBE</a></li>
+                            <li><a href="/news/list">NEWS</a></li>
                             <li><Link className="nav-link" to={"/board/list"}>COMMUNITY</Link></li>
                         </ul>
                         <i className="mobile-nav-toggle d-xl-none bi bi-list"></i>

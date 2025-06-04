@@ -8,6 +8,6 @@ import hotelReducer from "./hotelReducer";
 export default combineReducers({
     mains: mainReducer,
     boards: boardsReducer,
-    youtube: youtubeReducer,
+    youtubes: youtubeReducer,
     hotels: hotelReducer
 });

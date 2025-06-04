@@ -3,12 +3,13 @@ export const FETCH_MAIN_DATA='FETCH_MAIN_DATA';
 //hotel
 export const FETCH_HOTEL_LIST='FETCH_HOTEL_LIST';
 export const FETCH_HOTEL_DETAIL='FETCH_HOTEL_DETAIL';
+export const FETCH_HOTEL_FIND='FETCH_HOTEL_FIND';
 //food
 
 //youtube
-
-//news
 export const FETCH_YOUTUBE_FIND='FETCH_YOUTUBE_FIND'
+//news
+export const NEWS_LIST='NEWS_LIST'
 //board
 export const RESET = 'RESET'
 export const BOARD_LIST='BOARD_LIST'

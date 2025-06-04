@@ -1,7 +1,8 @@
-import { FETCH_MAIN_DATA } from '../actions/types';
+import {FETCH_MAIN_DATA, NEWS_LIST} from '../actions/types';
 
 const mainState = {
-    main_data:{}
+    main_data:{},
+    news_data:{}
 };
 
 console.log("FETCH_MAIN_DATA 상수값:", FETCH_MAIN_DATA);
@@ -13,6 +14,11 @@ export default function(state=mainState, action){
             return {
                 ...state,
                 main_data: action.payload
+            }
+        case NEWS_LIST:
+            return {
+                ...state,
+                news_data: action.payload
             }
         default:
             console.log("reducer default");
