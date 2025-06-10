@@ -1,4 +1,4 @@
-import {FETCH_MAIN_DATA, NEWS_LIST, FETCH_LOGIN_SUCCESS, FETCH_LOGIN_FAILURE} from '../actions/types';
+import {FETCH_MAIN_DATA, NEWS_LIST, FETCH_LOGIN_SUCCESS, FETCH_LOGIN_FAILURE, FETCH_LOGOUT} from '../actions/types';
 
 const mainState = {
     main_data:{},
@@ -35,6 +35,14 @@ export default function(state=mainState, action){
                 ...state,
                 isLoggedIn: false,
                 error: action.payload
+            }
+        case FETCH_LOGOUT:
+            return {
+                ...state,
+                userId: null,
+                isLoggedIn: false,
+                error: null
+
             }
 
         default:

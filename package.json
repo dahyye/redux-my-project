@@ -26,7 +26,8 @@
     "request": "^2.88.2",
     "swiper": "^11.2.8",
     "web-vitals": "^2.1.4",
-    "xml2js": "^0.6.2"
+    "xml2js": "^0.6.2",
+    "react-toastify": "^11.0.5"
   },
   "scripts": {
     "start": "react-scripts start",

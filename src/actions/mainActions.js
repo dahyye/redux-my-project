@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { FETCH_MAIN_DATA } from '../actions/types';
-import {response} from "express";
 export const fetchMainData = () => dispatch => {
     console.log("메인액션1");
     axios.get('http://localhost/main_react').then(res => {
@@ -16,7 +15,7 @@ export const fetchMainData = () => dispatch => {
 
 export const fetchLogin = (id, pwd) => async (dispatch) => {
     try {
-        const response = await axios.post('http://localhost:8080/login', {
+        const response = await axios.post('http://localhost/login', {
             id,
             pwd
         }, { withCredentials: true }); // 세션 쿠키 포함
@@ -29,16 +28,20 @@ export const fetchLogin = (id, pwd) => async (dispatch) => {
             }
         });
 
-        alert(response.data);
+        return Promise.resolve(response.data);
+
     } catch (err) {
         dispatch({
             type: 'FETCH_LOGIN_FAILURE',
             payload: err.response?.data || '로그인 실패'
         });
-
-        alert(err.response?.data || '로그인 실패');
+        return Promise.reject(err.response?.data || '로그인 실패');
     }
 };
+
+export const fetchLogout = () => ({
+    type:'FETCH_LOGOUT',
+})
 
 export const fetchNewsData= (fd) => dispatch => {
     console.log("패치뉴스데이터");

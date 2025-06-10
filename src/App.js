@@ -14,11 +14,21 @@ import HotelList from "./components/hotel/HotelList";
 import HotelDetail from "./components/hotel/HotelDetail";
 import HotelFind from "./components/hotel/HotelFind";
 import NewsList from "./components/news/NewsList";
+import Login from "./components/main/Login";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
       <Provider store={store}>
           <Router>
+              <ToastContainer position="top-center"
+                              autoClose={2500}
+                              hideProgressBar={true}
+                              newestOnTop={true}
+                              closeOnClick
+                              pauseOnHover
+                              theme="light" />
               <Header />
               <Routes>
                   <Route path="/" element={<Home/>} />
@@ -32,6 +42,7 @@ function App() {
                   <Route path={"/hotel/detail/:content_id"} element={<HotelDetail/>} />
                   <Route path={"/hotel/find"} element={<HotelFind/>} />
                   <Route path={"/news/list"} element={<NewsList/>} />
+                  <Route path={"/login"} element={<Login/>} />
               </Routes>
               <Footer />
           </Router>

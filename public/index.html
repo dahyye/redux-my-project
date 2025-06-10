@@ -59,6 +59,31 @@
         background-color: #555;
         color: white;
       }
+      /* 전체 토스트 스타일 (미니멀 톤) */
+      .Toastify__toast {
+        border-radius: 12px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+        font-size: 15px;
+        font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+        padding: 12px 18px;
+      }
+
+      /* 성공 알림 */
+      .Toastify__toast--success {
+        background: #007bff;     /* Bootstrap primary */
+        color: white;
+      }
+
+      /* 오류 알림 */
+      .Toastify__toast--error {
+        background: #dc3545;     /* Bootstrap danger */
+        color: white;
+      }
+
+      /* 진행바 숨김 효과 */
+      .Toastify__progress-bar {
+        display: none;
+      }
     </style>
   </head>
   <body>

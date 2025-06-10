@@ -1,7 +1,20 @@
 import {Fragment} from 'react';
 import {Link} from 'react-router-dom';
+import {useDispatch, useSelector} from 'react-redux';
+import {fetchLogout} from "../../actions/mainActions";
+import {useNavigate} from "react-router-dom";
 
 function Header() {
+    const isLoggedIn = useSelector(state => state.mains.isLoggedIn);
+    const userId = useSelector(state => state.mains.userId);
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const handleLogout = () => {
+        dispatch(fetchLogout());
+        navigate('/');
+    }
+
     return (
         <Fragment>
             <header id="header" className="header d-flex align-items-center sticky-top">
@@ -36,10 +49,17 @@ function Header() {
                     </nav>
 
                     <div className="header-social-links">
-                        <a href="#" className="twitter"><i className="bi bi-twitter-x"></i></a>
-                        <a href="#" className="facebook"><i className="bi bi-facebook"></i></a>
-                        <a href="#" className="instagram"><i className="bi bi-instagram"></i></a>
-                        <a href="#" className="linkedin"><i className="bi bi-linkedin"></i></a>
+                        { isLoggedIn ?
+                            (
+                              <div>  
+                                <span>{userId}님 로그인 중</span>
+                                <button className={"btn btn-sm btn-outline-dark ms-2"} onClick={handleLogout}>로그 아웃</button>
+                              </div>
+                            )
+                            :
+                            (<Link to="/login" className="btn btn-primary" style={{ color: '#fff' }}>로그인</Link>)
+                        }
+
                     </div>
 
                 </div>
